@@ -4,6 +4,7 @@ namespace App\Entity;
 
 use App\Repository\PostRepository;
 use Doctrine\ORM\Mapping as ORM;
+use Gedmo\Mapping\Annotation as Gedmo;
 
 #[ORM\Entity(repositoryClass: PostRepository::class)]
 class Post
@@ -17,6 +18,7 @@ class Post
     private $title;
 
     #[ORM\Column(type: 'string', length: 255)]
+    #[Gedmo\Slug(fields: ['title'])]
     private $slug;
 
     #[ORM\Column(type: 'string', length: 255, nullable: true)]
@@ -26,9 +28,11 @@ class Post
     private $content;
 
     #[ORM\Column(type: 'datetime_immutable')]
+    #[Gedmo\Timestampable(on: 'create')]
     private $createdAt;
 
     #[ORM\Column(type: 'datetime_immutable')]
+    #[Gedmo\Timestampable(on: 'update')]
     private $updatedAt;
 
     public function getId(): ?int
