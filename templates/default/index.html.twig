@@ -9,9 +9,16 @@
     </header>
 
     <main class="app-main">
-        {% for i in 0..50 %}
-            <p>blabla</p>
-        {% endfor %}
+        {% if posts %}
+            <div class="app-grid">
+                {% for post in posts %}
+                    <div class="grid-item">
+                        <img src="{{ asset('assets/img/' ~ post.media) }}" alt="{{ post.title }}" />
+                        <h3>{{ post.title }}</h3>
+                    </div>
+                {% endfor %}
+            </div>
+        {% endif %}
     </main>
 
     <footer class="app-footer">
