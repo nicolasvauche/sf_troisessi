@@ -29,8 +29,10 @@
                         <td>{{ post.id }}</td>
                         <td>{{ post.title }}</td>
                         <td>{{ post.slug }}</td>
-                        <td>{{ post.media }}</td>
-                        <td>{{ post.content }}</td>
+                        <td>
+                            <img src="{{ asset('/assets/img/post/' ~ post.media ) }}" alt="{{ post.title }}" />
+                        </td>
+                        <td>{{ post.content | raw }}</td>
                         <td>{{ post.createdAt ? post.createdAt|date('Y-m-d H:i:s') : '' }}</td>
                         <td>{{ post.updatedAt ? post.updatedAt|date('Y-m-d H:i:s') : '' }}</td>
                         <td>

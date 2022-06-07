@@ -2,21 +2,30 @@
     margin: 1rem auto;
     width: 60vw;
 
-    label {
-        margin-bottom: 0.5rem;
+    .error{
         font-weight: bold;
-        font-size: 1.25rem;
+        color: $color-red;
+        margin-bottom: 2rem;
     }
 
-    .form-control {
-        box-sizing: border-box;
-        padding: 0.5rem 1rem;
+    .form-group {
         margin-bottom: 1.5rem;
-        width: 100%;
-    }
 
-    textarea {
-        min-width: 100%;
-        max-width: 100%;
+        label {
+            margin-bottom: 0.5rem;
+            font-weight: bold;
+            font-size: 1.25rem;
+        }
+
+        .form-control {
+            box-sizing: border-box;
+            padding: 0.5rem 1rem;
+            width: 100%;
+        }
+
+        textarea {
+            min-width: 100%;
+            max-width: 100%;
+        }
     }
 }

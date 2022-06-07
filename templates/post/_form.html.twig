@@ -1,4 +1,9 @@
 {{ form_start(form, { attr: { 'class': 'app-form'}}) }}
+
+{% for error in errors %}
+    <p class="error">{{ error.message }}</p>
+{% endfor %}
+
 <div class="form-group">
     <label for="{{ form.title.vars.id }}">{{ form.title.vars.label }}</label>
     {{ form_widget(form.title) }}
@@ -9,5 +14,10 @@
     {{ form_widget(form.content) }}
 </div>
 
+<div class="form-group">
+    <label for="{{ form.media.vars.id }}">{{ form.media.vars.label }}</label>
+    {{ form_widget(form.media) }}
+</div>
+
 <button class="btn">{{ button_label|default('Save') }}</button>
-{{ form_end(form, {render_rest: false}) }}
+{{ form_end(form) }}
