@@ -36,6 +36,8 @@ class PostController extends AbstractController
 
             $form->handleRequest($request);
 
+            $errors = $form->getErrors(true);
+
             if ($form->isSubmitted() && $form->isValid()) {
                 /** @var UploadedFile $mediaFile */
                 $mediaFile = $form->get('media')->getData();
@@ -52,6 +54,7 @@ class PostController extends AbstractController
             return $this->renderForm('post/new.html.twig', [
                 'post' => $post,
                 'form' => $form,
+                'errors' => $errors,
             ]);
         } catch (FormSizeFileException $e) {
             dd($e->getMessage());
