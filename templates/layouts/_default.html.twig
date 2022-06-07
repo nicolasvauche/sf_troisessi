@@ -13,11 +13,24 @@
                 <a href="{{ path('app_logout') }}">Log out</a>
             {% else %}
                 <a href="{{ path('app_login') }}">Log in</a>
+
+                <a href="{{ path('app_register') }}">Sign in</a>
             {% endif %}
         </nav>
     </header>
 
     <main class="app-main">
+        <!-- Flash messages -->
+        {% for label, messages in app.flashes %}
+            {% for message in messages %}
+                {% if loop.first %}
+                    <div class="app_alert {{ label }}">
+                        {{ message | trans | capitalize }}
+                    </div>
+                {% endif %}
+            {% endfor %}
+        {% endfor %}
+
         {% block main %}{% endblock %}
     </main>
 
