@@ -8,6 +8,11 @@ html {
         text-align: center;
         color: $color-black;
         background-color: $color-white;
+
+        h1 {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
     }
 
     @import "header", "main", "footer";
