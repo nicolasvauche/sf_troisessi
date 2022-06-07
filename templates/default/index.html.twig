@@ -1,27 +1,17 @@
-{% extends 'base.html.twig' %}
+{% extends 'layouts/_default.html.twig' %}
 
 {% block title %}Liste des articles{% endblock %}
 {% block body_class %}home{% endblock %}
 
-{% block body %}
-    <header class="app-header">
-        Header
-    </header>
-
-    <main class="app-main">
-        {% if posts %}
-            <div class="app-grid">
-                {% for post in posts %}
-                    <div class="grid-item">
-                        <img src="{{ asset('assets/img/' ~ post.media) }}" alt="{{ post.title }}" />
-                        <h3>{{ post.title }}</h3>
-                    </div>
-                {% endfor %}
-            </div>
-        {% endif %}
-    </main>
-
-    <footer class="app-footer">
-        Footer
-    </footer>
+{% block main %}
+    {% if posts %}
+        <div class="app-grid">
+            {% for post in posts %}
+                <div class="grid-item">
+                    <img src="{{ asset('assets/img/' ~ post.media) }}" alt="{{ post.title }}" />
+                    <h3>{{ post.title }}</h3>
+                </div>
+            {% endfor %}
+        </div>
+    {% endif %}
 {% endblock %}

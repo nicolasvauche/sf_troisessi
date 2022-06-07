@@ -1,21 +1,11 @@
-{% extends 'base.html.twig' %}
+{% extends 'layouts/_default.html.twig' %}
 
 {% block title %}New Post{% endblock %}
 
-{% block body %}
-    <header class="app-header">
-        Header
-    </header>
+{% block main %}
+    <h1>Create new Post</h1>
 
-    <main class="app-main">
-        <h1>Create new Post</h1>
+    {{ include('post/_form.html.twig') }}
 
-        {{ include('post/_form.html.twig') }}
-
-        <a href="{{ path('app_post_index') }}">back to list</a>
-    </main>
-
-    <footer class="app-footer">
-        Footer
-    </footer>
+    <a href="{{ path('app_post_index') }}">back to list</a>
 {% endblock %}

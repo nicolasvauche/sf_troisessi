@@ -1,0 +1,27 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <header class="app-header">
+        Header
+
+        <nav>
+            <a href="{{ path('app_home') }}">Accueil</a>
+
+            <a href="{{ path('app_post_index') }}">Articles</a>
+
+            {% if app.user %}
+                <a href="{{ path('app_logout') }}">Log out</a>
+            {% else %}
+                <a href="{{ path('app_login') }}">Log in</a>
+            {% endif %}
+        </nav>
+    </header>
+
+    <main class="app-main">
+        {% block main %}{% endblock %}
+    </main>
+
+    <footer class="app-footer">
+        Footer
+    </footer>
+{% endblock %}

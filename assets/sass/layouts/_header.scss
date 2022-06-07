@@ -2,6 +2,9 @@
     position: sticky;
     top: 0;
     z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     padding: 1rem;
     background-color: $color-white;
     box-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
@@ -9,5 +12,17 @@
     @include respond(sm) {
         color: $color-white;
         background-color: $color-green;
+    }
+
+    nav {
+        display: flex;
+        align-items: center;
+
+        a {
+            display: block;
+            margin: 0 1.5rem;
+            color: $color-white;
+            text-decoration: none;
+        }
     }
 }
