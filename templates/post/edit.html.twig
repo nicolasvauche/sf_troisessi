@@ -3,11 +3,21 @@
 {% block title %}Edit Post{% endblock %}
 
 {% block body %}
-    <h1>Edit Post</h1>
+    <header class="app-header">
+        Header
+    </header>
 
-    {{ include('post/_form.html.twig', {'button_label': 'Update'}) }}
+    <main class="app-main">
+        <h1>Edit Post</h1>
 
-    <a href="{{ path('app_post_index') }}">back to list</a>
+        {{ include('post/_form.html.twig', {'button_label': 'Update'}) }}
 
-    {{ include('post/_delete_form.html.twig') }}
+        <a href="{{ path('app_post_index') }}">back to list</a>
+
+        {{ include('post/_delete_form.html.twig') }}
+    </main>
+
+    <footer class="app-footer">
+        Footer
+    </footer>
 {% endblock %}
